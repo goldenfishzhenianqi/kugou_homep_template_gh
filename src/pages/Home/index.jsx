@@ -15,14 +15,14 @@ const Home = memo(() => {
   const [bookData, setBookData] = useState([])
 
   useEffect(() => {
-    return async () => {
+    (async () => {
       const data1 = await axios.get('https://www.fastmock.site/mock/cdb98f464d71f15f5b54decc864bed76/kugou/songs')
       // setSongData(data.data)
       setSongData(data1.data)
 
       const data2 = await axios.get('https://www.fastmock.site/mock/cdb98f464d71f15f5b54decc864bed76/kugou/books')
       setBookData(data2.data)
-    }
+    })()
   }, [])
 
   return (
